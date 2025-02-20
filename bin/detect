@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "Install Rails 6 gems"
+exit 0

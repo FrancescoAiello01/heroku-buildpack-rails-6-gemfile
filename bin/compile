@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ ! -f "gemfiles/rails_6.1.gemfile" ]; then
+  echo "gemfiles/rails_6.1.gemfile not found, exiting."
+  exit 1
+fi
+
+BUNDLE_GEMFILE=gemfiles/rails_6.1.gemfile bundle install
+
+exit 0
