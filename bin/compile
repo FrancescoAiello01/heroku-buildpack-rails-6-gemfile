@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
-if [ ! -f "gemfiles/rails_6.1.gemfile" ]; then
-  echo "$PWD"
+BUILD_DIR="$1"
+CACHE_DIR="$2"
+ENV_DIR="$3"
+
+rails_6_1_gemfile_path="${BUILD_DIR}/gemfiles/rails_6.1.gemfile"
+echo "$rails_6_1_gemfile_path"
+if [ ! -f "$rails_6_1_gemfile_path" ]; then
   echo "gemfiles/rails_6.1.gemfile not found, exiting."
   exit 1
 fi
 
-BUNDLE_GEMFILE=gemfiles/rails_6.1.gemfile bundle install
+BUNDLE_GEMFILE="$rails_6_1_gemfile_path" bundle install
 
 exit 0
